@@ -1,0 +1,11 @@
+# Usar la imagen base que ya tienes
+FROM josec48j/lab6-docker:v1
+
+# Establecer el directorio de trabajo dentro del contenedor
+WORKDIR /app
+
+# Copiar el notebook al contenedor 
+COPY reduc-operation-alumno02.ipynb /app/reduc-operation-alumno02.ipynb
+
+# Ejecutar el notebook cuando el contenedor inicie
+CMD ["ipython", "/app/reduc-operation-alumno02.ipynb", "10**5"]
